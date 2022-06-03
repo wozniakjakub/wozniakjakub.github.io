@@ -71,6 +71,28 @@ $(document).ready(function () {
     $("#modal_do_wprowadzania_danych").append(`<h2>Dane wprowadzono</h2>`);
   });
 
+  // lokalizacja
+  mymap.locate({setView:true, maxZoom:10});
+
+  function nazwaFunkcji(param){
+    return parametr+2;
+  }
+
+  function onLocationFound(e){
+    let radius = e.accuracy /2;
+    L.marker(e.latlng)
+      .addTo(mymap)
+      .bindPopup(`Znajdujesz sie w promieniu ${radius} metrów w od tego punktu`
+      )
+      .openPopup();
+    L.circle(e.latlng,radius).addTo(mymap);
+  }
+  function onLocationError(e){
+    alert(e.message);
+  }
+  mymap.on('locationerror', onLocationError);
+  mymap.on('locationfound', onLocationFound);
+
   let layer_group;
   let filtered = [];
   // generowanie listy wszystkich dat
