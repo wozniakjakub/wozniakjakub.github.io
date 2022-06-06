@@ -12,12 +12,27 @@ $(document).ready(function () {
     version: "1.1.1",
   });
 
+  //dodaje własą kompozycję z geoservera
+  let kompozycja = L.tileLayer.wms("http://127.0.0.1:8080/geoserver/prge/wms", {
+    layers: "prge:Kompozycja",
+    format: "image/png",
+    transparent: "true",
+    version: "1.1.1",
+  });
+
   // obsługa warstw
   let baseMaps = {
-    "dane z OSM": adresOSM,
-    "moje dane": mojeDane,
-  };
-  L.control.layers(baseMaps).addTo(mymap);
+    //  "dane z OSM": adresOSM,
+    //  "moje dane": mojeDane,
+    };
+    
+    let overlays = {
+      "dane z OSM": adresOSM,
+      "moje dane": mojeDane,
+      "kompozycja": kompozycja,
+    };
+
+  L.control.layers(baseMaps, overlays).addTo(mymap);
   mymap.addLayer(adresOSM);
 
     // okodowanie guzika który ma zamykać modal
