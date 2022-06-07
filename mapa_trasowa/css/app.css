@@ -1,0 +1,60 @@
+body {
+  margin:0;
+  background-color: #2f3336;
+  color: #efefef;
+  font-family:  'lato';
+  font-size:17px;
+}
+/* to jest logo */
+h1.logo{
+  font-size:44px;
+  font-weight: 700;
+  text-align:center;
+  color:#ddd;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-top:0px;
+  margin:0px;
+  line-height: 132px;
+}
+
+/* stylizacja nawigacji */
+nav{
+  background-color: #1c74b2;
+  text-align: center;
+}
+
+.menu{
+  list-style-type: none;
+  margin:0;
+  padding:10px;
+  font-size:18px;
+  min-height:30px;
+  line-height:200%;
+}
+
+.menu > li {
+  display:inline-block;
+  padding-left:20px;
+  padding-right:20px;
+  border-right: 1px dashed #0a2b42;
+}
+
+.menu >li:first-child{
+  border-left: 1px dashed #0a2b42;
+}
+
+.menu a {
+  color:#fff;
+  text-decoration: none;
+}
+
+.menu a:hover{
+  color:#0a2b42;
+}
+
+#map {
+  width: 200vh;
+  height: 80vh;
+  margin: 3vh;
+}
